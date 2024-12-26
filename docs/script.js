@@ -1,6 +1,6 @@
 
-import DUMMY_DATA from '/docs/dummy_data.js';
-import TrieSearch from '/docs/lib/trie-search.js';
+import DUMMY_DATA from './dummy_data.js';
+import TrieSearch from './lib/trie-search.js';
 
 const trie = new TrieSearch();
 
