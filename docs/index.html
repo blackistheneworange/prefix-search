@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trie Search</title>
+    <link rel="stylesheet" href="/docs/style.css" />
+</head>
+<body>
+    <main>
+        <section class="header">
+            <h1>Prefix Search</h1>
+        </section>
+        <div class="container">
+            <section class="result">
+                <div class="result_input_container">
+                    <div class="result_input_options">
+                        <div>
+                            <input data-no-hide="true" id="ignore_case_input" type="checkbox" />
+                            <label data-no-hide="true" for="ignore_case_input">Ignore case</label>
+                        </div>
+                    </div>
+                    <input class="result_input" data-no-hide="true" placeholder="Enter text to search..." />
+                </div>
+                <div class="result_display_container">
+                    <ol class="result_display"></ol>
+                </div>
+            </section>
+
+            <form class="words_input_form">
+                <button class="add_words_button">Add Words</button>
+                <div class="input_textarea">
+                    <textarea name="words" id="words_input" placeholder="Enter words separated by a comma..."></textarea>
+                </div>
+            </form>
+            
+            <section class="words_box_container">
+                <button class="clear_button">Clear</button>
+                <div class="words_box"></div>
+            </section>
+
+        </div>
+    </main>
+    <script type="module" src="/docs/script.js"></script>
+</body>
+</html>

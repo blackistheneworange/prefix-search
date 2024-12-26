@@ -1,0 +1,132 @@
+:root {
+    --words-font-size: 24px;
+    --primary-box-shadow: 1px 1px 2px #000;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.container>*{
+    width:45%;
+}
+
+section.header{
+    text-align: center;
+}
+
+.input_textarea textarea{
+    width: 100%;
+    height: 300px;
+    font-size: var(--words-font-size);
+    padding:8px;
+    resize: none;
+    box-sizing: border-box;
+    box-shadow: var(--primary-box-shadow);
+}
+
+.words_input_form {
+    position: relative;
+}
+.words_input_form button.add_words_button{
+    float:right;
+}
+.words_input_form div.input_textarea{
+    clear: right;
+}
+
+.words_box_container>button.clear_button{
+    float: right;
+}
+.words_box {
+    clear: right;
+    position: relative;
+    border: 1px solid #000;
+    height: 300px;
+    overflow: auto;
+    box-shadow: var(--primary-box-shadow);
+}
+.words_box>.empty_message{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    padding: 0;
+    margin: 0;
+}
+
+.words_box>div {
+    display: inline-block;
+    background-color: bisque;
+    border: 0.5px solid #000;
+    margin: 4px;
+}
+.words_box div.word{
+    display: flex;
+}
+.words_box div.word>span{
+    font-size: var(--words-font-size);
+    padding: 0 6px;
+    margin: 0;
+}
+.words_box div.word>button {
+    margin: 0;
+}
+
+.result {
+    flex: 1 0 100%;
+    margin-bottom:4rem;
+    position: relative;
+}
+.result input.result_input {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: var(--words-font-size);
+    padding:8px 4px;
+    border: none;
+    box-shadow: var(--primary-box-shadow);
+}
+.result_input_options{
+    margin-bottom: 8px;
+}
+
+.result_display_container {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    background-color: #8d8c8c;
+    color: #fff;
+    transform-origin: top;
+    transform:scaleY(0);
+    transition: transform 50ms ease-in-out;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    overflow: auto;
+    max-height:400px;
+}
+.result_display{
+    width:100%;
+    margin: 0;
+    padding: 0;
+}
+.result_display.hide{
+    display: none;
+}
+.result_display li{
+    cursor: pointer;
+    list-style: none;
+    padding: 8px;
+    border-bottom: 1px solid #000;;
+    margin: 0;
+}
+.result_display li.empty_result{
+    text-align: center;
+    background-color: rgb(238, 108, 15);
+}
