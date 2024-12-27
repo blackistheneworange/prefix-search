@@ -14,29 +14,29 @@ yarn build
 ```
 Running the above commands should build a ready-to-use js file with a default export under /dist folder
 
-### Importing Trie class
+### Importing PrefixSearch class
 ```
-import Trie from '/dist/trie-search.js'
-```
-
-### Using Trie class instance
-```
-const TrieSearch = new Trie();
-TrieSearch.addWords(['word 1', word 2']);
-TrieSearch.removeWords(['word 2']);
+import PrefixSearch from '/dist/prefix-search.js'
 ```
 
-### Getting prefix matches using the instance
+### Using PrefixSearch class instance
 ```
-TrieSearch.getPrefixMatches('prefix string');
+const prefixSearch = new PrefixSearch();
+prefixSearch.addWords(['word 1', word 2']);
+prefixSearch.removeWords(['word 2']);
+```
+
+### Get prefix matches
+```
+prefixSearch.getPrefixMatches('prefix string');
 ```
 
 ### Toggle case sensitivity
 ```
-TrieSearch.ignore_case = true
+prefixSearch.ignore_case = true
 ```
 
 ### Get list of added words
 ```
-TrieSearch.words
+prefixSearch.words
 ```
