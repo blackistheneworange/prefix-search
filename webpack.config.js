@@ -7,7 +7,7 @@ module.exports = {
   output: {
     clean: true,
     path: path.resolve(__dirname, 'dist'),
-    filename: 'trie-search.js',
+    filename: 'prefix-search.js',
     libraryTarget: 'module'
   },
   module: {

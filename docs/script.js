@@ -1,8 +1,8 @@
 
 import DUMMY_DATA from './dummy_data.js';
-import TrieSearch from './lib/trie-search.js';
+import PrefixSearch from './lib/prefix-search.js';
 
-const trie = new TrieSearch();
+const prefixSearch = new PrefixSearch();
 
 const results_display_el = document.querySelector('.result .result_display');
 const words_box_el = document.querySelector('.words_box');
@@ -78,21 +78,21 @@ function handleAddWords(ev){
 }
 
 function addWords(words){
-    trie.addWords(words);
-    addWordsToWordsBox(trie.words);
+    prefixSearch.addWords(words);
+    addWordsToWordsBox(prefixSearch.words);
 }
 
 function handleRemoveWord(ev){
     const word_to_remove = ev.target.getAttribute('data-word');
-    trie.removeWords([word_to_remove]);
+    prefixSearch.removeWords([word_to_remove]);
 
     ev.target.parentNode.parentNode.remove();
-    if(trie.words.length === 0) setEmptyWordsBoxMessage();
+    if(prefixSearch.words.length === 0) setEmptyWordsBoxMessage();
 }
 
 function handleRemoveWords(){
     words_box_el.innerHTML = '';
-    trie.removeWords([...trie.words]);
+    prefixSearch.removeWords([...prefixSearch.words]);
     
     setEmptyWordsBoxMessage();
 }
@@ -107,7 +107,7 @@ function handleSearchWords(ev, show_display=true){
     if(!value || value.length === 0) {
         printResults([], true);
     }
-    else printResults(trie.getPrefixMatches(value));
+    else printResults(prefixSearch.getPrefixMatches(value));
 }
 
 function handleHideResults(ev){
@@ -116,7 +116,7 @@ function handleHideResults(ev){
 }
 
 function handleToggleIgnoreCase(ev){
-    trie.ignore_case = ev.target.checked;
+    prefixSearch.ignore_case = ev.target.checked;
     handleSearchWords({target: result_input_el}, false);
 }
 
